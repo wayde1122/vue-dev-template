@@ -1,4 +1,6 @@
 node_modules
 coverage
-src/__tests__
-./claude/tsc-cache
+dist
+
+# Claude Code cache
+.claude/tsc-cache
