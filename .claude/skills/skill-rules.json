@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "skills": {
+    "ui-ux-pro-max": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "ui",
+          "ux",
+          "design",
+          "界面",
+          "设计",
+          "样式",
+          "美化",
+          "布局",
+          "配色",
+          "主题",
+          "动效",
+          "交互"
+        ]
+      }
+    },
+    "vue3-vite-guidelines": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "promptTriggers": {
+        "keywords": [
+          "vue",
+          "vue3",
+          "vite",
+          "pinia",
+          "vue router",
+          "composition api",
+          "前端",
+          "组件",
+          "工程化"
+        ]
+      }
+    },
+    "vue3-vite-testing": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "测试",
+          "单测",
+          "单元测试",
+          "组件测试",
+          "集成测试",
+          "端到端",
+          "e2e",
+          "test",
+          "unit",
+          "component test",
+          "integration",
+          "vitest",
+          "jest",
+          "testing library",
+          "vue test utils",
+          "playwright",
+          "覆盖率",
+          "coverage",
+          "mock",
+          "断言"
+        ]
+      }
+    }
+  }
+}

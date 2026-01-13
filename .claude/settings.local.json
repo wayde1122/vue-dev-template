@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where:*)",
+      "Bash(claude:*)",
+      "Bash(dir \"%APPDATA%\\\\Claude\\\\plugins\")",
+      "Bash(dir:*)",
+      "Bash(findstr /i \"skill\")",
+      "Bash(git clone:*)",
+      "Bash(python:*)",
+      "Bash(mkdir:*)",
+      "Bash(pip install:*)",
+      "Bash(pandoc:*)",
+      "Bash(npm install)",
+      "Bash(node .claude/hooks/skill-activation-prompt.js)",
+      "Bash(node .claude/hooks/post-tool-use-tracker.js)",
+      "Skill(vue3-vite-guidelines)",
+      "Bash(npm install:*)",
+      "Skill(vue3-vite-testing)",
+      "Bash(npm run test)",
+      "Bash(npm i -D vitest jsdom @vue/test-utils @testing-library/vue @testing-library/jest-dom)",
+      "Bash(npm run test:*)",
+      "Bash(npm i:*)",
+      "Bash(findstr:*)",
+      "Bash(git init:*)",
+      "Bash(npx husky init:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run lint:*)",
+      "Bash(npx commitlint:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/skill-activation-prompt.js"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/post-tool-use-tracker.js"
+          }
+        ]
+      }
+    ]
+  }
+}
