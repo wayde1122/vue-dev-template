@@ -17,7 +17,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const title = computed(() => route.meta.title || 'Projects')
+const title = computed(() => route.meta.title ?? 'Projects')
 const description = computed(() => `Manage your ${title.value.toLowerCase()} and track progress.`)
 </script>
 

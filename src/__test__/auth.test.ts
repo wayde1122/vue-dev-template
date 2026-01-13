@@ -29,7 +29,7 @@ describe('Auth Store', () => {
     it('应该有正确的默认 getter 值', () => {
       const store = useAuthStore()
       expect(store.userName).toBe('Guest')
-      expect(store.userRole).toBe('user')
+      expect(store.userRole).toBe('Guest')
       expect(store.userInitials).toBe('GU')
     })
   })
@@ -184,9 +184,8 @@ describe('Auth Store', () => {
       expect(store.userInitials).toBe('GU')
     })
 
-    it('使用 ?? 而非 || 处理 falsy 值', () => {
+    it('不使用 || 默认值，且空字符串 name 时 userName 仍应回退到 Guest', () => {
       const store = useAuthStore()
-      // 测试空字符串不会被 || 误判
       store.setUser({ id: '1', name: '', email: '', role: 'Guest' })
       expect(store.userName).toBe('Guest') // 空字符串是 falsy，但这里返回默认值
     })

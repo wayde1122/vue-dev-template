@@ -21,7 +21,7 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-const title = computed(() => route.meta.title || 'Team')
+const title = computed(() => route.meta.title ?? 'Team')
 const description = computed(() => `Manage your ${title.value.toLowerCase()} and collaborate effectively.`)
 </script>
 

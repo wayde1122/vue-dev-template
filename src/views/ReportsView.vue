@@ -23,7 +23,7 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-const title = computed(() => route.meta.title || 'Reports')
+const title = computed(() => route.meta.title ?? 'Reports')
 const description = computed(() => `View and manage your ${title.value.toLowerCase()}.`)
 </script>
 

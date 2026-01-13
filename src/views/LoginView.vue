@@ -73,13 +73,11 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 import BaseInput from '@/components/common/BaseInput.vue'
 import BaseButton from '@/components/common/BaseButton.vue'
 import { useAuth } from '@/composables/useAuth'
 import { useNotification } from '@/composables/useNotification'
 
-const router = useRouter()
 const { login } = useAuth()
 const { error: showError } = useNotification()
 
@@ -101,7 +99,6 @@ async function handleLogin() {
       email: form.value.email,
       password: form.value.password
     })
-    router.push('/dashboard')
   } catch {
     error.value = 'Invalid credentials'
     showError('Invalid email or password')

@@ -28,10 +28,10 @@ export function useNotification() {
     const id = Date.now()
     const notification: Notification = {
       id,
-      type: options.type || 'info',
-      title: options.title || '',
+      type: options.type ?? 'info',
+      title: options.title ?? '',
       message: options.message,
-      duration: options.duration || 3000
+      duration: options.duration ?? 3000
     }
 
     notifications.value.push(notification)

@@ -15,8 +15,11 @@ export const useAuthStore = defineStore('auth', () => {
 
   // Getters
   const isAuthenticated = computed(() => !!token.value)
-  const userName = computed(() => user.value?.name || 'Guest')
-  const userRole = computed(() => user.value?.role ?? 'user')
+  const userName = computed(() => {
+    const name = user.value?.name?.trim()
+    return name && name.length > 0 ? name : 'Guest'
+  })
+  const userRole = computed(() => user.value?.role ?? 'Guest')
   const userInitials = computed(() => {
     if (!user.value?.name) return 'GU'
     return user.value.name

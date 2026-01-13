@@ -23,8 +23,10 @@ export function useAuth() {
   async function login(credentials: LoginCredentials): Promise<LoginResponse> {
     const result = await authStore.login(credentials)
     // 登录成功后跳转
-    const redirect = (router.currentRoute.value.query.redirect as string) || '/dashboard'
-    router.push(redirect)
+    const queryRedirect = router.currentRoute.value.query.redirect
+    const redirect =
+      typeof queryRedirect === 'string' && queryRedirect.length > 0 ? queryRedirect : '/dashboard'
+    await router.push(redirect)
     return result
   }
 
