@@ -21,11 +21,15 @@ export default [
         localStorage: 'readonly',
         setTimeout: 'readonly',
         clearTimeout: 'readonly',
-        console: 'readonly'
+        console: 'readonly',
+        HTMLDivElement: 'readonly',
+        MouseEvent: 'readonly',
+        Node: 'readonly'
       }
     },
     rules: {
-      'vue/multi-word-component-names': 'off'
+      'vue/multi-word-component-names': 'off',
+      'no-undef': 'off'
     }
   },
   {

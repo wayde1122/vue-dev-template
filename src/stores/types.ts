@@ -66,3 +66,46 @@ export interface DashboardChartData {
   weekly: ChartDataPoint[]
   productivity: ChartDataPoint[]
 }
+
+// ======== Team Member Types ========
+
+/**
+ * 性别枚举
+ */
+export type Gender = '男' | '女'
+
+export const GENDERS: Gender[] = ['男', '女']
+
+/**
+ * 所属部门枚举
+ */
+export type Department = '技术部' | '产品部' | '设计部' | '市场部' | '人事部' | '财务部' | '运营部'
+
+export const DEPARTMENTS: Department[] = ['技术部', '产品部', '设计部', '市场部', '人事部', '财务部', '运营部']
+
+/**
+ * 职级枚举
+ */
+export type Level = '初级' | '中级' | '高级' | '专家' | '资深专家'
+
+export const LEVELS: Level[] = ['初级', '中级', '高级', '专家', '资深专家']
+
+/**
+ * 团队成员
+ */
+export interface Member {
+  id: string
+  name: string
+  gender: Gender
+  idCardNumber: string
+  jobTitle: string
+  department: Department
+  level: Level
+  createdAt: string
+  updatedAt: string
+}
+
+/**
+ * 创建/编辑成员时的表单数据（不含 id、createdAt、updatedAt）
+ */
+export type MemberFormData = Omit<Member, 'id' | 'createdAt' | 'updatedAt'>

@@ -45,28 +45,27 @@
   </Teleport>
 </template>
 
-<script setup>
-defineProps({
-  modelValue: Boolean,
-  title: String,
-  size: {
-    type: String,
-    default: 'md',
-    validator: (value) => ['sm', 'md', 'lg', 'xl'].includes(value)
-  },
-  showClose: {
-    type: Boolean,
-    default: true
-  },
-  closeOnOverlay: {
-    type: Boolean,
-    default: true
-  },
-  fullscreen: Boolean,
-  noPadding: Boolean
-})
+<script setup lang="ts">
+defineProps<{
+  modelValue: boolean
+  title?: string
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  showClose?: boolean
+  closeOnOverlay?: boolean
+  fullscreen?: boolean
+  noPadding?: boolean
+}>()
 
-const emit = defineEmits(['update:modelValue', 'close'])
+defineSlots<{
+  default(): unknown
+  header?(): unknown
+  footer?(): unknown
+}>()
+
+const emit = defineEmits<{
+  'update:modelValue': [value: boolean]
+  'close': []
+}>()
 
 function handleClose() {
   emit('update:modelValue', false)
